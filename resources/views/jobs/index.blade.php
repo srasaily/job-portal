@@ -39,8 +39,11 @@
                 <td>{{ $job->title }}</td>
                 <td>{{ $job->email }}</td>
                 <td>{{ $job->created_at }}</td>
-                <td><a href="{{ route('jobs.show', $job->id) }}" title="view details"><i
-                        class="fa fa-eye"></i>Details</a></td>
+                <td>
+                  <a href="{{ route('jobs.show', $job->id) }}" title="view details"><i
+                        class="fa fa-eye"></i>Details</a> | <a href="{{ route('jobs.edit', $job->id) }}" title="view details"><i
+                        class="fa fa-eye"></i>Edit</a>
+                </td>
               </tr>
             @endforeach
             </tbody>

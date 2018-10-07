@@ -88,6 +88,9 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
+        if(!$job->is_verified){
+            abort(404);
+        }
         $skills         = JobSkill::pluck('name', 'id');
         $selectedSkills = $job->jobSkills()->pluck('job_skills.id')->toArray();
 
