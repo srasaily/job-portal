@@ -11,7 +11,7 @@
 
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item dropdown d-none d-xl-inline-block">
-        <span class="profile-text">Hello, Richard V.Welsh !</span>
+        <span class="profile-text">Hello User!</span>
       </li>
     </ul>
     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"

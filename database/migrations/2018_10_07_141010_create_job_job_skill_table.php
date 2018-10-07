@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJobsTable extends Migration
+class CreateJobJobSkillTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateJobsTable extends Migration
      */
     public function up()
     {
-        Schema::create('jobs', function (Blueprint $table) {
+        Schema::create('job_job_skill', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('email');
-            $table->text('detail');
-            $table->boolean('is_verified')->default(false);
-            $table->string('verification_token')->nullable();
+            $table->unsignedInteger('job_id');
+            $table->unsignedInteger('job_skill_id');
             $table->timestamps();
+
+            $table->foreign('job_id')->references('id')->on('jobs');
+            $table->foreign('job_skill_id')->references('id')->on('job_skills');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateJobsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jobs');
+        Schema::dropIfExists('job_job_skill');
     }
 }
